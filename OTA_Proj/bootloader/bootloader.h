@@ -1,0 +1,20 @@
+#ifndef __BOOTLOADER__H
+#define __BOOTLOADER__H
+
+#include "main.h"
+#define FLASH_START_ADDRESS 			0x08000000
+#define FLASH_SIZE								(512*1024)
+#define BOOTLOADER_STARR_ADDRESS 	FLASH_START_ADDRESS
+#define BOOTLOADER_SIZE						0xC000
+#define APP_START_ADDRESS 				(FLASH_START_ADDRESS+BOOTLOADER_SIZE)
+#define APP_SIZE									(FLASH_START_ADDRESS + FLASH_SIZE \
+																		- BOOTLOADER_STARR_ADDRESS - BOOTLOADER_SIZE)
+
+void Jump_To_App(void);
+
+
+
+
+
+
+#endif
